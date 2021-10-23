@@ -23,7 +23,7 @@
   "gnetId": 11036,
   "graphTooltip": 0,
   "id": 5,
-  "iteration": 1635018316520,
+  "iteration": 1635021876940,
   "links": [],
   "panels": [
     {
@@ -1220,7 +1220,7 @@
             "mode": "palette-classic"
           },
           "custom": {
-            "axisLabel": "pPHOTON",
+            "axisLabel": "PHOTON",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -1461,7 +1461,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Usage Disk Space",
+      "title": "Disk Space Use",
       "type": "gauge"
     },
     {
@@ -1953,8 +1953,8 @@
         "allValue": "",
         "current": {
           "selected": false,
-          "text": "75.119.144.103:10100",
-          "value": "75.119.144.103:10100"
+          "text": "93.104.211.78:10100",
+          "value": "93.104.211.78:10100"
         },
         "datasource": "$DS",
         "definition": "label_values(tendermint_consensus_height{chain_id=\"$chain_id\"}, instance)",
@@ -1982,7 +1982,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -2013,5 +2013,5 @@
   "timezone": "",
   "title": "Public Evmos Monitoring",
   "uid": "LUAK-EO7k",
-  "version": 49
+  "version": 52
 }
