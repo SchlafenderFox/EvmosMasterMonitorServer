@@ -1,0 +1,2017 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": false,
+        "hide": false,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "",
+  "editable": true,
+  "gnetId": 11036,
+  "graphTooltip": 0,
+  "id": 5,
+  "iteration": 1635018316520,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "datasource": "Prometheus",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 64,
+      "panels": [],
+      "title": "$chain_id overview",
+      "type": "row"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 97,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "total_validators{instance=\"$instance\"}",
+          "interval": "",
+          "legendFormat": "Total Validators",
+          "refId": "A"
+        }
+      ],
+      "title": "Total Validators",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 123,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "total_jailed_validators{instance=\"$instance\"}",
+          "interval": "",
+          "legendFormat": "Total Validators",
+          "refId": "A"
+        }
+      ],
+      "title": "Jailed Validators",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "custom": {
+            "axisLabel": "TXs",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line+area"
+            }
+          },
+          "mappings": [],
+          "max": 5000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 3000
+              },
+              {
+                "color": "dark-red",
+                "value": 4000
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 8,
+        "y": 1
+      },
+      "id": 117,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "tendermint_mempool_size{instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "Count:",
+          "refId": "A"
+        }
+      ],
+      "title": "Mempool Size",
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 16,
+        "y": 1
+      },
+      "id": 129,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "total_supply{instance=\"$instance\"} / 10^18",
+          "interval": "",
+          "legendFormat": "Total supply",
+          "refId": "A"
+        }
+      ],
+      "title": "PHOTON Total supply",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 16,
+        "y": 4
+      },
+      "id": 126,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "tendermint_consensus_validators_power{instance=\"$instance\"} / 10^12",
+          "interval": "",
+          "legendFormat": "Bonded supply",
+          "refId": "A"
+        }
+      ],
+      "title": "PHOTON Bonded supply",
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "UNBONDED",
+                  "UNBONDING",
+                  "BONDED",
+                  "JAILED",
+                  "UNSPECIFIED"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 8,
+        "x": 0,
+        "y": 5
+      },
+      "id": 100,
+      "options": {
+        "displayLabels": [
+          "value",
+          "name"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "values": [
+            "percent"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "total_bond_status_unbounded_validators{instance=\"$instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "UNBONDED",
+          "refId": "UNBONDED Nodes Count"
+        },
+        {
+          "exemplar": true,
+          "expr": "total_bond_status_unbounding_validators{instance=\"$instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "UNBONDING",
+          "refId": "UNBONDING Nodes Count"
+        },
+        {
+          "exemplar": true,
+          "expr": "total_bond_status_bonded_validators{instance=\"$instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "BONDED",
+          "refId": "BONDED Nodes Count"
+        }
+      ],
+      "title": "Validators",
+      "type": "piechart"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 6
+      },
+      "id": 66,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "tendermint_consensus_height{chain_id=\"$chain_id\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "Block Height",
+          "refId": "A"
+        }
+      ],
+      "title": "Block Height",
+      "type": "stat"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 6
+      },
+      "hiddenSeries": false,
+      "id": 89,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0-beta2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "3600/delta(tendermint_consensus_height{chain_id=\"$chain_id\", instance=~\"$instance\"} [1h])",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Block time 1h MA",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Block time (1h MA)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:229",
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:230",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 8,
+        "x": 16,
+        "y": 9
+      },
+      "id": 128,
+      "options": {
+        "displayLabels": [
+          "value",
+          "name"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "values": [
+            "percent"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "tendermint_consensus_validators_power{instance=\"$instance\"} / 10^12",
+          "interval": "",
+          "legendFormat": "Bonded Supply",
+          "refId": "UNSPECIFIED Nodes Count"
+        },
+        {
+          "exemplar": true,
+          "expr": "(avg(total_supply{instance=\"$instance\"} / 10^18) - avg(tendermint_consensus_validators_power{instance=\"$instance\"} / 10^12))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Unbonded Supply",
+          "refId": "UNBONDED Nodes Count"
+        }
+      ],
+      "title": "Token Supply",
+      "type": "piechart"
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 8,
+        "y": 10
+      },
+      "hiddenSeries": false,
+      "id": 122,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": false,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0-beta2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "delta(tendermint_consensus_height{chain_id=\"$chain_id\", instance=~\"$instance\"}[1h])",
+          "hide": false,
+          "interval": "1h",
+          "legendFormat": "Block time 1h MA",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Blocks / hour",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:229",
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:230",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 8,
+        "y": 15
+      },
+      "hiddenSeries": false,
+      "id": 115,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0-beta2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "tendermint_consensus_num_txs{chain_id=\"$chain_id\", instance=~\"$instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Transactions",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Txs / block",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:229",
+          "format": "string",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:230",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "datasource": "Prometheus",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 20
+      },
+      "id": 55,
+      "panels": [],
+      "repeat": "instance",
+      "title": "Node Performance",
+      "type": "row"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "min": 0,
+          "noValue": "-",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 2,
+        "x": 0,
+        "y": 21
+      },
+      "id": 76,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "top_number{instance=~\"$instance\", jailed=\"ACTIVE\"}",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "Node: {{moniker}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Top number",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 15,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line+area"
+            }
+          },
+          "mappings": [],
+          "min": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "semi-dark-green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 300
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 10,
+        "x": 2,
+        "y": 21
+      },
+      "id": 84,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.0.6",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "top_number{instance=\"$instance\"}",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "Status: {{status}} Node: {{moniker}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Top Number History",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 15,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 21
+      },
+      "id": 119,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.0.6",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "tendermint_consensus_validator_missed_blocks{instance=\"$instance\"}",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Missed blocks",
+          "refId": "A"
+        }
+      ],
+      "title": "Missed Blocks",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 2,
+        "x": 0,
+        "y": 28
+      },
+      "id": 121,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "avg(tendermint_consensus_validator_power{instance=\"$instance\"}) / avg(tendermint_consensus_validators_power{instance=\"$instance\"}) * 100",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "Validator power in network",
+          "refId": "A"
+        }
+      ],
+      "title": "Voting power, %",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "pPHOTON",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 15,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "decimals": 6,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 10,
+        "x": 2,
+        "y": 28
+      },
+      "id": 120,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.0.6",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "tendermint_consensus_validator_power{instance=\"$instance\"} / 10^12",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "Voting Power",
+          "refId": "A"
+        }
+      ],
+      "title": "Voting Power",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 28
+      },
+      "hiddenSeries": false,
+      "id": 70,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0-beta2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "tendermint_p2p_peers{chain_id=\"$chain_id\", instance=~\"$instance\"}",
+          "interval": "",
+          "legendFormat": "Connected Peers",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Connected Peers",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:403",
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:404",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 35
+      },
+      "id": 102,
+      "panels": [],
+      "repeat": "instance",
+      "title": "Hardware Monitor",
+      "type": "row"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "links": [],
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 800000000000
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 0,
+        "y": 36
+      },
+      "id": 111,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_filesystem_avail_bytes{instance=~\"$instance\", mountpoint=\"/etc/hostname\"} * 100) / node_filesystem_size_bytes{instance=~\"$instance\", mountpoint=\"/etc/hostname\"})",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{mountpoint}}",
+          "refId": "B"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Usage Disk Space",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 15,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line+area"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 50000000000
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 19,
+        "x": 5,
+        "y": 36
+      },
+      "id": 104,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.0.6",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "node_filesystem_free_bytes{instance=~\"$instance\", mountpoint=\"/etc/hostname\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Free space",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Free Disk Space",
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 70
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 0,
+        "y": 42
+      },
+      "id": 106,
+      "interval": "",
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "(1- sum(increase(node_cpu_seconds_total{mode=\"idle\", instance=~\"$instance\"}[5m])) by (instance)/sum(increase(node_cpu_seconds_total[5m])) by (instance)) * 100",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU Load",
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 100,
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 15,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "displayName": "",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 75
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 19,
+        "x": 5,
+        "y": 42
+      },
+      "id": 112,
+      "interval": "",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.0.6",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "(1- sum(increase(node_cpu_seconds_total{mode=\"idle\", instance=~\"$instance\"}[5m])) by (instance)/sum(increase(node_cpu_seconds_total[5m])) by (instance)) * 100",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "CPU Load",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU Load",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 70
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 0,
+        "y": 48
+      },
+      "id": 113,
+      "interval": "",
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.1.0-beta2",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "100 * (node_memory_MemTotal_bytes{instance=~\"$instance\"} - node_memory_MemAvailable_bytes{instance=~\"$instance\"}) / node_memory_MemTotal_bytes{instance=~\"$instance\"}",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "RAM Use",
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 100,
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "area"
+            }
+          },
+          "displayName": "",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 75
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 19,
+        "x": 5,
+        "y": 48
+      },
+      "id": 109,
+      "interval": "",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.0.6",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "100 * (node_memory_MemTotal_bytes{instance=~\"$instance\"} - node_memory_MemAvailable_bytes{instance=~\"$instance\"}) / node_memory_MemTotal_bytes{instance=~\"$instance\"}",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "RAM Memory Load",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "RAM Use",
+      "transparent": true,
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 30,
+  "style": "dark",
+  "tags": [
+    "Blockchain",
+    "Cosmos",
+    "Evmos"
+  ],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "Prometheus",
+          "value": "Prometheus"
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Datasource",
+        "multi": false,
+        "name": "DS",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "evmos_9000-1",
+          "value": "evmos_9000-1"
+        },
+        "datasource": "$DS",
+        "definition": "label_values(tendermint_consensus_height, chain_id)",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Chain ID",
+        "multi": false,
+        "name": "chain_id",
+        "options": [],
+        "query": {
+          "query": "label_values(tendermint_consensus_height, chain_id)",
+          "refId": "Prometheus-chain_id-Variable-Query"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": "",
+        "current": {
+          "selected": false,
+          "text": "75.119.144.103:10100",
+          "value": "75.119.144.103:10100"
+        },
+        "datasource": "$DS",
+        "definition": "label_values(tendermint_consensus_height{chain_id=\"$chain_id\"}, instance)",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Instance",
+        "multi": false,
+        "name": "instance",
+        "options": [],
+        "query": {
+          "query": "label_values(tendermint_consensus_height{chain_id=\"$chain_id\"}, instance)",
+          "refId": "Prometheus-instance-Variable-Query"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 5,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Public Evmos Monitoring",
+  "uid": "LUAK-EO7k",
+  "version": 49
+}
